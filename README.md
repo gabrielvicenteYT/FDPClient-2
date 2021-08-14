@@ -1,17 +1,17 @@
 # FDPClient
 [![State-of-the-art Shitcode](https://img.shields.io/static/v1?label=State-of-the-art&message=Shitcode&color=7B5804)](https://github.com/trekhleb/state-of-the-art-shitcode)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/w/UnlegitMC/FDPClient)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/UnlegitMC/FDPClient)
-![GitHub lines of code](https://tokei.rs/b1/github/UnlegitMC/FDPClient)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/CheaterMC/FDPClient)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/CheaterMC/FDPClient)
+![GitHub lines of code](https://tokei.rs/b1/github/CheaterMC/FDPClient)
 ![Minecraft](https://img.shields.io/badge/game-Minecraft-brightgreen)  
 A free mixin-based injection hacked-client for Minecraft using Minecraft Forge based on LiquidBounce.
 
 Website: https://getfdp.today/  
-Latest: [github-actions](https://github.com/UnlegitMC/FDPClient/actions)  
+Latest Version: [Get it now](https://github.com/CheaterMC/FDPClient/actions)  
 Discord: https://discord.gg/dJtjF7swH9
 
 ## Issues
-If you notice any bugs or missing features, you can let us know by opening an issue [here](https://github.com/UnlegitMC/FDPClient/issues).
+If you notice any bugs or missing features, you can let us know by opening an issue [here](https://github.com/CheaterMC/FDPClient/issues).
 
 ## License
 This project is subject to the [GNU General Public License v3.0](LICENSE). This does only apply for source code located directly in this clean repository. During the development and compilation process, additional source code may be used to which we have obtained no rights. Such code is not covered by the GPL license.
