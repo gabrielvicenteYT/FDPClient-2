@@ -1,4 +1,4 @@
-# Translated by Liuli
+# Translated by Liuli and CheaterMC
 ui.altmanager=AltManager
 ui.mods=Mods
 ui.background=Background
@@ -26,7 +26,7 @@ ui.disconnect.randomAlt=Random Alt
 ui.disconnect.randomOffline=Random Offline
 
 ui.update.available=Update available!
-ui.update.released=FDP Client %s got released!
+ui.update.released=FDPClient %s got released!
 ui.update.dismiss=Dismiss
 ui.update.download=Download
 
@@ -118,10 +118,10 @@ module.Animations.value.ItemScale.name=ItemScale
 module.Animations.value.SwingAnim.name=SwingAnim
 
 module.AntiAim.name=AntiAim
-module.AntiAim.description=Anti aiming like CS:GO
+module.AntiAim.description=AntiAim like CSGO
 module.AntiAim.value.YawMove.name=YawMove
 module.AntiAim.value.PitchMode.name=PitchMode
-module.AntiAim.value.SlientRotate.name=SlientRotate
+module.AntiAim.value.SlientRotate.name=SlientRotations
 
 module.AntiBlind.name=AntiBlind
 module.AntiBlind.description=Cancels blindness effects
@@ -151,20 +151,20 @@ module.AntiBot.value.NeedHit.name=NeedHit
 module.AntiBot.value.DuplicateInWorld.name=DuplicateInWorld
 module.AntiBot.value.DuplicateInTab.name=DuplicateInTab
 
-module.AntiFireBall.name=AntiFireBall
-module.AntiFireBall.description=Hit the fireball automatically entity to let it back
-module.AntiFireBall.value.Swing.name=Swing
-module.AntiFireBall.value.Rotation.name=Rotation
+module.AntiFireball.name=AntiFireball
+module.AntiFireball.description=Hits fireballs so you dont receive damage.
+module.AntiFireball.value.Swing.name=Swing
+module.AntiFireball.value.Rotation.name=Rotation
 
 module.AntiStuck.name=AntiStuck
 module.AntiStuck.description=Unstucks you when you are stuck
 module.AntiStuck.value.Flags.name=Flags
 
 module.AntiVanish.name=AntiVanish
-module.AntiVanish.description=Anti player vanish
+module.AntiVanish.description=Shows who is vanished.
 
 module.AntiVoid.name=AntiVoid
-module.AntiVoid.description=Avoiding you from falling into void
+module.AntiVoid.description=Avoids you from falling into void
 module.AntiVoid.value.Mode.name=Mode
 module.AntiVoid.value.FallCheckMode.name=FallCheckMode
 module.AntiVoid.value.MaxFallDistance.name=MaxFallDistance
@@ -173,13 +173,13 @@ module.AntiVoid.value.BlinkStartFallDistance.name=BlinkStartFallDistance
 module.AntiVoid.value.BlinkAutoScaffold.name=BlinkAutoScaffold
 
 module.AuthBypass.name=AuthBypass
-module.AuthBypass.description=Bypass bot authenticate when join server
+module.AuthBypass.description=Bypasses Authentication checks made by certain servers
 module.AuthBypass.value.Delay.name=Delay
 
 module.KillInsults.name=KillInsults
-module.KillInsults.description=Automatically insult peoples you killed
+module.KillInsults.description=Automatically insults people you killed
 module.KillInsults.value.Mode.name=Mode
-module.KillInsults.value.WaterMark.name=WaterMark
+module.KillInsults.value.WaterMark.name=Watermark
 
 module.AutoAdvertise.name=AutoAdvertise
 module.AutoAdvertise.description=Keep this on, we need your support
@@ -210,12 +210,12 @@ module.AutoDisable.name=AutoDisable
 module.AutoDisable.description=Automatically disables modules
 
 module.AutoIgnore.name=AutoIgnore
-module.AutoIgnore.description=Auto ignore spammers(only redesky)
+module.AutoIgnore.description=Automatically ignores spammers
 module.AutoIgnore.value.MinDelay.name=MinDelay
 module.AutoIgnore.value.IgnoreVL.name=IgnoreVL
 
 module.AutoLogin.name=AutoLogin
-module.AutoLogin.description=Automatic makes you login into server
+module.AutoLogin.description=Automatically login-in on cracked servers
 module.AutoLogin.value.Register.name=Register
 module.AutoLogin.value.Login.name=Login
 module.AutoLogin.value.Password.name=Password
@@ -224,7 +224,7 @@ module.AutoLogin.value.Title.name=Title
 module.AutoLogin.value.Chat.name=Chat
 
 module.AutoPlay.name=AutoPlay
-module.AutoPlay.description=Auto join another game when game end
+module.AutoPlay.description=Automatically joins a new game when the one you're playing ends
 module.AutoPlay.value.Server.name=Server
 module.AutoPlay.value.Silent.name=Silent
 module.AutoPlay.value.JoinDelay.name=JoinDelay
@@ -242,7 +242,7 @@ module.AutoPot.value.Utility.name=Utility
 module.AutoPot.value.NotCombat.name=NotCombat
 
 module.AutoReport.name=AutoReport
-module.AutoReport.description=Auto report players
+module.AutoReport.description=Automatically reports players
 module.AutoReport.value.Mode.name=Mode
 module.AutoReport.value.Command.name=Command
 module.AutoReport.value.Tip.name=Tip
@@ -266,7 +266,7 @@ module.AutoWeapon.value.SpoofItem.name=SpoofItem
 module.AutoWeapon.value.SpoofTicks.name=SpoofTicks
 
 module.BetterFPS.name=BetterFPS
-module.BetterFPS.description=Make math calculate faster
+module.BetterFPS.description=Makes your game faster
 module.BetterFPS.value.SinMode.name=SinMode
 module.BetterFPS.value.CosMode.name=CosMode
 
@@ -339,14 +339,14 @@ module.Chams.value.Chests.name=Chests
 module.Chams.value.Items.name=Items
 
 module.ChatBypass.name=ChatBypass
-module.ChatBypass.description=Bypass chat limit
+module.ChatBypass.description=Bypasses chat limit
 module.ChatBypass.value.Mode.name=Mode
 module.ChatBypass.value.Chance.name=Chance
 module.ChatBypass.value.MinUnicode.name=MinUnicode
 module.ChatBypass.value.MaxUnicode.name=MaxUnicode
 
 module.ChatTranslator.name=ChatTranslator
-module.ChatTranslator.description=Translate words in chat
+module.ChatTranslator.description=Translates chat
 module.ChatTranslator.value.Language.name=Language
 module.ChatTranslator.value.API.name=API
 
@@ -401,8 +401,8 @@ module.Criticals.value.Mode.name=Mode
 module.Criticals.value.Delay.name=Delay
 module.Criticals.value.HurtTime.name=HurtTime
 module.Criticals.value.UseC06Packet.name=UseC06Packet
-module.Criticals.value.DebugMessage.name=DebugMessage
-module.Criticals.value.RedeNofall.name=RedeNofall
+module.Criticals.value.Debug.name=Debug
+module.Criticals.value.RedeskyNoFall.name=RedeskyNoFall
 
 module.DamageParticle.name=DamageParticle
 module.DamageParticle.description=Allows you to see targets damage
@@ -410,10 +410,10 @@ module.DamageParticle.value.AliveTicks.name=AliveTicks
 module.DamageParticle.value.Size.name=Size
 
 module.Disabler.name=Disabler
-module.Disabler.description=Disable anticheats
+module.Disabler.description=Disable anticheats or certain checks
 module.Disabler.value.Mode.name=Mode
 module.Disabler.value.Debug.name=Debug
-module.Disabler.value.MemetrixWithAAC5.name=MemetrixWithAAC5
+module.Disabler.value.MatrixWithAAC5.name=MatrixWithAAC5
 module.Disabler.value.FakeLagPosition.name=FakeLagPosition
 module.Disabler.value.FakeLagBlock.name=FakeLagBlock
 module.Disabler.value.FakeLagAttack.name=FakeLagAttack
@@ -514,8 +514,8 @@ module.Fucker.value.Rotations.name=Rotations
 module.Fucker.value.Surroundings.name=Surroundings
 module.Fucker.value.NoHit.name=NoHit
 
-module.Gapple.name=Gapple
-module.Gapple.description=Eat Gapples
+module.Gapple.name=AutoGapple
+module.Gapple.description=Automatically eats gapples
 module.Gapple.value.Mode.name=Mode
 module.Gapple.value.Health.name=Health
 module.Gapple.value.Delay.name=Delay
@@ -537,7 +537,7 @@ module.HUD.value.ChatCombine.name=ChatCombine
 module.HUD.value.ChatAnimation.name=ChatAnimation
 
 module.HackerDetector.name=HackerDetector
-module.HackerDetector.description=Detect SIGMA Hackers
+module.HackerDetector.description=Detects hackers
 module.HackerDetector.value.Combat.name=Combat
 module.HackerDetector.value.Movement.name=Movement
 module.HackerDetector.value.Debug.name=Debug
@@ -546,7 +546,7 @@ module.HackerDetector.value.AutoReport.name=AutoReport
 module.HackerDetector.value.VL.name=VL
 
 module.HealthWarn.name=HealthWarn
-module.HealthWarn.description=Show warning when you during low health
+module.HealthWarn.description=Shows warning when you are in a low health
 module.HealthWarn.value.Health.name=Health
 
 module.HighJump.name=HighJump
@@ -564,7 +564,7 @@ module.HudDesigner.name=HudDesigner
 module.HudDesigner.description=Opens the HudDesigner
 
 module.HurtCam.name=HurtCam
-module.HurtCam.description=Changes the hurt cam effect
+module.HurtCam.description=Changes the hurtcam effect
 module.HurtCam.value.Mode.name=Mode
 module.HurtCam.value.R.name=R
 module.HurtCam.value.G.name=G
@@ -574,7 +574,7 @@ module.HurtCam.value.FPSTime.name=FPSTime
 module.HurtCam.value.FPSHeight.name=FPSHeight
 
 module.InfiniteAura.name=InfiniteAura
-module.InfiniteAura.description=Hit enemies from far away
+module.InfiniteAura.description=Hits enemies from far away
 module.InfiniteAura.value.Mode.name=Mode
 module.InfiniteAura.value.Targets.name=Targets
 module.InfiniteAura.value.CPS.name=CPS
@@ -674,12 +674,12 @@ module.KillAura.value.Mark.name=Mark
 module.KillAura.value.FakeSharp.name=FakeSharp
 
 module.LegitSpoof.name=LegitSpoof
-module.LegitSpoof.description=Hack? No im legit
+module.LegitSpoof.description=Spoofs some things so it seems that you're legit
 module.LegitSpoof.value.Render.name=Render
 module.LegitSpoof.value.Title.name=Title
 
 module.LightningDetect.name=LightningDetect
-module.LightningDetect.description=Check lightning spawn at
+module.LightningDetect.description=Checks where lightning is spawning
 
 module.LiquidWalk.name=LiquidWalk
 module.LiquidWalk.description=Allows you to walk on water
@@ -718,12 +718,12 @@ module.LongJump.value.AutoJump.name=AutoJump
 module.LongJump.value.AutoClose.name=AutoClose
 
 module.MessageSpam.name=MessageSpam
-module.MessageSpam.description=Spam messages(only redesky)
+module.MessageSpam.description=Spams messages
 module.MessageSpam.value.Times.name=Times
 module.MessageSpam.value.Delay.name=Delay
 
 module.MidClick.name=MidClick
-module.MidClick.description=Allows you to add a player as a friend by right clicking him.
+module.MidClick.description=Allows you to add a player as a friend by right clicking
 
 module.NameProtect.name=NameProtect
 module.NameProtect.description=Changes playernames clientside
@@ -985,7 +985,7 @@ module.Target.value.Invisible.name=Invisible
 module.Target.value.Dead.name=Dead
 
 module.TargetStrafe.name=TargetStrafe
-module.TargetStrafe.description=TargetStrafe
+module.TargetStrafe.description=Automatically strafes at enemies
 module.TargetStrafe.value.GodMode.name=GodMode
 module.TargetStrafe.value.Render.name=Render
 module.TargetStrafe.value.radius.name=radius
@@ -1044,4 +1044,4 @@ module.XRay.name=XRay
 module.XRay.description=Allows you to see selected blocks through walls
 
 module.IRC.name=IRC
-module.IRC.description=Allow you chat with other users
+module.IRC.description=Allows you to chat with other users
