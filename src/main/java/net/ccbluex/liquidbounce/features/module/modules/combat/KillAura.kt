@@ -166,7 +166,7 @@ class KillAura : Module() {
     private val limitedMultiTargetsValue = IntegerValue("LimitedMultiTargets", 0, 0, 50).displayable { targetModeValue.get().equals("Multi",true) }
 
     // Visuals
-    private val markValue = ListValue("Mark", arrayOf("Liquid","FDP","Block","Jello","None"),"FDP")
+    private val markValue = ListValue("Mark", arrayOf("LiquidBounce","FDPClient","Block","Jello","None"),"FDP")
     private val fakeSharpValue = BoolValue("FakeSharp", true)
 
     /**
@@ -384,7 +384,7 @@ class KillAura : Module() {
         }
 
         when(markValue.get().toLowerCase()){
-            "liquid" -> {
+            "liquidbounce" -> {
                 discoveredTargets.forEach {
                     RenderUtils.drawPlatform(it, if (it.hurtTime<=0) Color(37, 126, 255, 170) else Color(255, 0, 0, 170))
                 }
@@ -397,7 +397,7 @@ class KillAura : Module() {
                     it.entityBoundingBox=bb
                 }
             }
-            "fdp" -> {
+            "fdpclient" -> {
                 val drawTime = (System.currentTimeMillis() % 1500).toInt()
                 val drawMode=drawTime>750
                 var drawPercent=drawTime/750.0
@@ -833,8 +833,5 @@ class KillAura : Module() {
      * HUD Tag
      */
     override val tag: String
-        get() = "${minCPS.get()}-${maxCPS.get()}, " +
-                "$maxRange${if(!autoBlockValue.get().equals("Off",true)){"-${autoBlockRangeValue.get()}"}else{""}}-${discoverRangeValue.get()}, " +
-                "${if(targetModeValue.get().equals("Switch",true)){ "SW" }else{targetModeValue.get().substring(0,1).toUpperCase()}}, " +
-                priorityValue.get().substring(0,1).toUpperCase()
+        get() = targetModeValue.get()
 }
