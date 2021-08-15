@@ -75,6 +75,8 @@ public class Fly extends Module {
 
             // CubeCraft
             "CubeCraft",
+            "InfinityCubecraft",
+            "InfinityVCubecraft",
 
             // Hypixel
             "Hypixel",
