@@ -41,8 +41,8 @@ object LiquidBounce {
     // Client information
     const val CLIENT_NAME = "FDPClient"
     const val COLORED_NAME = "§c§lFDP§6§lClient"
-    const val CLIENT_REAL_VERSION = "v1.3.3"
-    const val CLIENT_CREATOR = "CCBlueX & UnlegitMC"
+    const val CLIENT_REAL_VERSION = "v2.0-dev"
+    const val CLIENT_CREATOR = "CCBlueX UnlegitMC & CheaterMC"
     const val MINECRAFT_VERSION = "1.8.9"
 
     // 自动读取客户端版本
@@ -103,7 +103,7 @@ object LiquidBounce {
 
         // check update
         Thread {
-            val get = HttpUtils.get("https://fdp.liulihaocai.workers.dev/")
+            val get = HttpUtils.get("https://pastebin.com/raw/KbcJuJW3")
 
             val jsonObj = JsonParser()
                 .parse(get).asJsonObject
