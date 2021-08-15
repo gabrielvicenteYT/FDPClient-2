@@ -36,7 +36,7 @@ class Velocity : Module() {
      */
     private val horizontalValue = FloatValue("Horizontal", 0F, 0F, 1F)
     private val verticalValue = FloatValue("Vertical", 0F, 0F, 1F)
-    private val modeValue = ListValue("Mode", arrayOf("Simple", "AACPush", "AACZero", "AAC4Reduce", "AAC5Reduce", "Redesky", "Redesky2", "AAC5.2.0", "AAC5.2.0Combat", "HuaYuTing", "Reverse", "SmoothReverse", "Jump", "Phase", "PacketPhase", "Glitch", "Legit"), "Simple")
+    private val modeValue = ListValue("Mode", arrayOf("Simple", "AACPush", "AACZero", "AAC4Reduce", "AAC5Reduce", "Redesky", "Redesky2", "Redesky3", "AAC5.2.0", "AAC5.2.0Combat", "HuaYuTing", "Reverse", "SmoothReverse", "Jump", "Phase", "PacketPhase", "Glitch", "Legit"), "Simple")
 
     // Reverse
     private val reverseStrengthValue = FloatValue("ReverseStrength", 1F, 0.1F, 1F)
@@ -171,6 +171,16 @@ class Velocity : Module() {
                 }
             }
             
+            "redesky2" -> {
+                if (mc.thePlayer.hurtTime>0 && velocityInput){
+                    velocityInput = false
+                    mc.netHandler.addToSendQueue(C03PacketPlayer.C04PacketPlayerPosition(mc.thePlayer.posX,1.7976931348623157E+308,mc.thePlayer.posZ,true))
+                }
+                if(velocityTimer.hasTimePassed(120L) && velocityInput) {
+                    velocityInput = false
+                }
+            }
+            
             "aacpush" -> {
                 if (jump) {
                     if (mc.thePlayer.onGround)
@@ -285,6 +295,11 @@ class Velocity : Module() {
                     templateZ = packet.motionZ
                     templateY = packet.motionY
                 }
+                
+                "redesky2" -> {
+                    event.cancelEvent()
+                    velocityInput = false
+                }
 
                 "packetphase" -> {
                     if (!mc.thePlayer.onGround&&phaseOnlyGround.get())
@@ -313,7 +328,7 @@ class Velocity : Module() {
                     pos=BlockPos(mc.thePlayer.posX,mc.thePlayer.posY,mc.thePlayer.posZ)
                 }
                 
-                "redesky2" -> {
+                "redesky3" -> {
                     if(packet.getMotionX()==0&&packet.getMotionZ()==0){ // ignore horizonal velocity
                         return
                     }
