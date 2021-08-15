@@ -71,6 +71,7 @@ public class Fly extends Module {
             "AAC5.2.0",
             "AAC5.2.0-Fast",
             "AAC5.2.0-Vanilla",
+            "AAC5.2.0-Smooth",
 
             // CubeCraft
             "CubeCraft",
@@ -201,6 +202,8 @@ public class Fly extends Module {
     private C03PacketPlayer.C06PacketPlayerPosLook aac5QueuedPacket=null;
     private int aac5SameReach=5;
     private EntityOtherPlayerMP clonedPlayer=null;
+    private boolean aac5FlyClip=false;
+    private boolean aac5FlyStart=false;
 
     private float launchYaw=0;
     private float launchPitch=0;
@@ -284,6 +287,20 @@ public class Fly extends Module {
                     clonedPlayer.setInvisible(true);
                     mc.setRenderViewEntity(clonedPlayer);
                 }
+                break;
+            case "aac5.2.0-smooth":
+                if(aac520view.get()){
+                    clonedPlayer = new EntityOtherPlayerMP(mc.theWorld, mc.thePlayer.getGameProfile());
+                    clonedPlayer.rotationYawHead = mc.thePlayer.rotationYawHead;
+                    clonedPlayer.copyLocationAndAnglesFrom(mc.thePlayer);
+                    mc.theWorld.addEntityToWorld((int) -(Math.random() * 10000), clonedPlayer);
+                    clonedPlayer.setInvisible(true);
+                    mc.setRenderViewEntity(clonedPlayer);
+                }
+                flyTimer.reset();
+                aac5FlyClip=false;
+                aac5FlyStart=false;
+                mc.thePlayer.setPosition(mc.thePlayer.posX, mc.thePlayer.posY + 0.42, mc.thePlayer.posZ);
                 break;
             case "ncp":
                 if(!mc.thePlayer.onGround)
@@ -434,6 +451,7 @@ public class Fly extends Module {
                     mc.thePlayer.setPosition(mc.thePlayer.posX + x, mc.thePlayer.posY, mc.thePlayer.posZ + z);
                     theTimer.reset();
                 }
+                mc.thePlayer.jumpMovementFactor = 0.00f;
                 break;
             }
             case "aac5.2.0":
@@ -475,6 +493,22 @@ public class Fly extends Module {
                     aac5QueuedPacket=new C03PacketPlayer.C06PacketPlayerPosLook(mc.thePlayer.posX,mc.thePlayer.posY,mc.thePlayer.posZ, mc.thePlayer.rotationYaw, mc.thePlayer.rotationPitch, false);
                 }
                 break;
+            case "aac5.2.0-smooth":
+                if(!flyTimer.hasTimePassed(1000) || !aac5FlyStart) {
+                    mc.thePlayer.motionY = 0;
+                    mc.thePlayer.motionX = 0;
+                    mc.thePlayer.motionZ = 0;
+                    mc.thePlayer.jumpMovementFactor = 0.00f;
+                    mc.timer.timerSpeed = 0.33F;
+                    return;
+                }else if(aac5FlyStart) {
+                    if(!aac5FlyClip) {
+                        mc.timer.timerSpeed = 0.19F;
+                    }else{
+                        aac5FlyClip=false;
+                        mc.timer.timerSpeed = 0.8F;
+                    }
+                }
             case "aac5.2.0-vanilla":
                 if(aac520view.get()){
                     clonedPlayer.inventory.copyInventory(mc.thePlayer.inventory);
@@ -919,6 +953,11 @@ public class Fly extends Module {
         final Packet<?> packet = event.getPacket();
 
         if(packet instanceof S08PacketPlayerPosLook){
+            aac5FlyStart=true;
+            if(flyTimer.hasTimePassed(2000)) {
+                aac5FlyClip=true;
+                mc.timer.timerSpeed = 1.0F;
+            }
             final S08PacketPlayerPosLook packetPlayerPosLook=(S08PacketPlayerPosLook) packet;
 
             if(modeValue.get().equalsIgnoreCase("AAC5.2.0-Vanilla")&&aac520view.get()) {
@@ -942,10 +981,12 @@ public class Fly extends Module {
             if(mode.contains("AAC5.2.0"))
                 event.cancelEvent();
 
-            if(modeValue.get().equalsIgnoreCase("AAC5.2.0-Vanilla")){
+            if(modeValue.get().equalsIgnoreCase("AAC5.2.0-Vanilla") || modeValue.get().equalsIgnoreCase("AAC5.2.0-Smooth")){
                 aac5C03List.add(packetPlayer);
                 event.cancelEvent();
-                if(aac5C03List.size()>aac520Purse.get()) {
+                if(modeValue.get().equalsIgnoreCase("AAC5.2.0-Smooth") && !flyTimer.hasTimePassed(1000)) {
+                    
+                } else if(aac5C03List.size()>aac520Purse.get()) {
                     sendAAC5Packets();
                 }
             }
