@@ -36,13 +36,7 @@ class Velocity : Module() {
      */
     private val horizontalValue = FloatValue("Horizontal", 0F, 0F, 1F)
     private val verticalValue = FloatValue("Vertical", 0F, 0F, 1F)
-    private val modeValue = ListValue("Mode", arrayOf("Simple", "AACPush", "AACZero", "AAC4Reduce", "AAC5Reduce",
-                                                      "Redesky1", "Redesky2", 
-                                                      "AAC5.2.0", "AAC5.2.0Combat", "HuaYuTing",
-                                                      "Reverse", "SmoothReverse", 
-                                                      "Jump", 
-                                                      "Phase", "PacketPhase", "Glitch",
-                                                      "Legit"), "Simple")
+    private val modeValue = ListValue("Mode", arrayOf("Simple", "AACPush", "AACZero", "AAC4Reduce", "AAC5Reduce", "Redesky", "Redesky2", "AAC5.2.0", "AAC5.2.0Combat", "HuaYuTing", "Reverse", "SmoothReverse", "Jump", "Phase", "PacketPhase", "Glitch", "Legit"), "Simple")
 
     // Reverse
     private val reverseStrengthValue = FloatValue("ReverseStrength", 1F, 0.1F, 1F)
@@ -69,9 +63,9 @@ class Velocity : Module() {
         .displayable { modeValue.get().equals("Legit",true) }
 
     private val rspAlwaysValue = BoolValue("RedeskyAlwaysReduce",true)
-        .displayable { modeValue.get().contains("RedeSky",true) }
+        .displayable { modeValue.get().contains("Redesky",true) }
     private val rspDengerValue = BoolValue("RedeskyOnlyDanger",false)
-        .displayable { modeValue.get().contains("RedeSky",true) }
+        .displayable { modeValue.get().contains("Redesky",true) }
 
     /**
      * VALUES
@@ -336,7 +330,7 @@ class Velocity : Module() {
                     if(redeCount>12) redeCount -= 5
                 }
 
-                "redesky1" -> {
+                "redesky" -> {
                     if(packet.getMotionX()==0&&packet.getMotionZ()==0){ // ignore horizonal velocity
                         return
                     }
